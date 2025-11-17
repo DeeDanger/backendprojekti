@@ -30,6 +30,7 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/", true)
                         .permitAll())
                 .logout(logout -> logout
+
                         .permitAll());
 
         return http.build();

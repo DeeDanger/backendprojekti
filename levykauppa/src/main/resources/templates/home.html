@@ -17,8 +17,18 @@
 
   <body class="bg-light">
     <!-- HERO SECTION -->
+
     <header class="hero mb-5">
-      <div class="hero-overlay"></div>
+      <div class="hero-overlay">
+        <form method="post" action="/logout" class="d-inline">
+          <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+
+          <button type="submit" class="btn btn-outline-danger">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </button>
+        </form>
+      </div>
+
       <div class="hero-content text-center">
         <h1 class="display-3 fw-bold mb-3">Welcome to Record Store</h1>
         <p class="lead mb-4">Explore and expand your record collection.</p>
