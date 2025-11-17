@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Record Store</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" th:href="@{/css/hero.css}" />
+  </head>
+
+  <body class="bg-light">
+    <!-- HERO SECTION -->
+    <header class="hero mb-5">
+      <div class="hero-overlay"></div>
+      <div class="hero-content text-center">
+        <h1 class="display-3 fw-bold mb-3">Welcome to Record Store</h1>
+        <p class="lead mb-4">Explore and expand your record collection.</p>
+
+        <a th:href="@{/recordlist}" class="btn btn-primary btn-lg me-2">
+          <i class="bi bi-vinyl"></i> View Records
+        </a>
+
+        <a th:href="@{/addrecord}" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-plus-circle"></i> Add Album
+        </a>
+      </div>
+    </header>
+
+    <!-- FEATURE SECTION -->
+    <section class="container text-center mb-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <i class="bi bi-disc feature-icon"></i>
+          <h4 class="mt-3">Build Your Collection</h4>
+          <p class="text-muted">
+            Store all your albums with artists, genres, formats and pricing.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <i class="bi bi-search feature-icon"></i>
+          <h4 class="mt-3">Browse Your Collection</h4>
+          <p class="text-muted">Quickly find any album in your collection.</p>
+        </div>
+
+        <div class="col-md-4">
+          <i class="bi bi-bar-chart feature-icon"></i>
+          <h4 class="mt-3">Track Value</h4>
+          <p class="text-muted">
+            Get a summary of total inventory value and a price average.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+      © 2025 Record Store — Made by Nicholas Mononen.
+    </footer>
+  </body>
+</html>

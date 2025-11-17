@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Album</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Add New Album</h1>
+
+      <form th:object="${album}" th:action="@{/save}" method="post">
+        <div class="mb-3">
+          <label for="artist" class="form-label">Artist</label>
+          <input
+            type="text"
+            id="artist"
+            class="form-control"
+            th:field="*{artist}"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="albumTitle" class="form-label">Album Title</label>
+          <input
+            type="text"
+            id="albumTitle"
+            class="form-control"
+            th:field="*{albumTitle}"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="releaseYear" class="form-label">Release Year</label>
+          <input
+            type="number"
+            id="releaseYear"
+            class="form-control"
+            th:field="*{releaseYear}"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="format" class="form-label">Format</label>
+          <select id="format" class="form-select" th:field="*{format}">
+            <option
+              th:each="f : ${formats}"
+              th:value="${f.id}"
+              th:text="${f.name}"
+            >
+              Format
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="genre" class="form-label">Genre</label>
+          <select id="genre" class="form-select" th:field="*{genre}">
+            <option
+              th:each="g : ${genres}"
+              th:value="${g.id}"
+              th:text="${g.name}"
+            >
+              Genre
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            step="0.01"
+            id="price"
+            class="form-control"
+            th:field="*{price}"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Album</button>
+        <a th:href="@{/recordlist}" class="btn btn-secondary ms-2"
+          >Back to List</a
+        >
+      </form>
+    </div>
+  </body>
+</html>
